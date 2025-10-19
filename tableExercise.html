@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Employee Tables</title>
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background:#f6f6f6;
+      padding:36px;
+      color:#111;
+    }
+
+    .card {
+      width: 760px;
+      margin: 28px auto;
+      background:#fff;
+      border:1px solid #bdbdbd;
+      box-shadow: 4px 6px 0 rgba(0,0,0,0.15);
+      padding:16px;
+    }
+
+    table {
+      width:100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th, td {
+      border:1px solid #9a9a9a;
+      padding:8px 10px;
+      vertical-align: middle;
+      word-wrap:break-word;
+    }
+
+    thead th {
+      background:#ffea00;
+      font-weight:700;
+      text-align: left;
+    }
+    /* alternate yellow rows in body */
+    tbody tr:nth-child(odd) td {
+      background: #fff;
+    }
+    tbody tr:nth-child(even) td {
+      background: #ffea00;
+    }
+    caption {
+      caption-side: top;
+      text-align: center;
+      font-size: 24px;
+      font-weight:700;
+      padding:12px 0 6px;
+    }
+
+    .employee-table tfoot td {
+      background:#ffea00;
+      font-weight:700;
+      text-align:right;
+      padding-right:16px;
+    }
+
+    .dept {
+      font-weight:700;
+      background: #fff;
+    }
+    tbody td:last-child,
+    tfoot td:last-child {
+      text-align: right;
+    }
+
+    /* small responsive behavior on narrow Macs/screens */
+    @media (max-width:820px){
+      .card { width: 96%; }
+      caption { font-size:18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <table class="simple-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Years of Service</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">Joel Murach</td><td class="email">joelmurach@yahoo.com</td><td>22</td></tr>
+        <tr><td class="name">Anne Boehm</td><td class="email">anne@murach.com</td><td>34</td></tr>
+        <tr><td class="name">Zak Ruvalcaba</td><td class="email">zak@modulemedia.com</td><td>4</td></tr>
+        <tr><td class="name">Judy Taylor</td><td class="email">judy@murach.com</td><td>39</td></tr>
+        <tr><td class="name">Cyndi Vasquez</td><td class="email">cyndi@murach.com</td><td>10</td></tr>
+        <tr><td class="name">Kelly Slivkoff</td><td class="email">kelly@murach.com</td><td>25</td></tr>
+        <tr><td class="name">Juliette Baylon</td><td class="email">juliette@murach.com</td><td>1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <table class="employee-table">
+      <caption>Employee Table</caption>
+      <thead>
+        <tr>
+          <th style="width:18%">Department</th>
+          <th style="width:28%">Name</th>
+          <th style="width:34%">E-mail</th>
+          <th style="width:20%">Years of Service</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dept" rowspan="3">Editorial</td>
+          <td class="name">Joel Murach</td>
+          <td class="email">joelmurach@yahoo.com</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td class="name">Anne Boehm</td>
+          <td class="email">anne@murach.com</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td class="name">Zak Ruvalcaba</td>
+          <td class="email">zak@modulemedia.com</td>
+          <td>4</td>
+        </tr>
+
+        <tr>
+          <td class="dept" rowspan="2">Marketing</td>
+          <td class="name">Judy Taylor</td>
+          <td class="email">judy@murach.com</td>
+          <td>39</td>
+        </tr>
+        <tr>
+          <td class="name">Cyndi Vasquez</td>
+          <td class="email">cyndi@murach.com</td>
+          <td>10</td>
+        </tr>
+
+        <tr>
+          <td class="dept" rowspan="2">Customer Service</td>
+          <td class="name">Kelly Slivkoff</td>
+          <td class="email">kelly@murach.com</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td class="name">Juliette Baylon</td>
+          <td class="email">juliette@murach.com</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="3" style="text-align:left; padding-left:12px;">Total Years of Service</td>
+          <td>105</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</body>
+</html>
